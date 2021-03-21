@@ -1,0 +1,10 @@
+set(target polynomial_test)
+
+#file(GLOB hdrs "*.h*" "../polynomial/*.h" "../gtest/*.h")
+file(GLOB hdrs "*.h*")
+file(GLOB srcs "*.cpp" "../polynomial/polynomial.cpp")
+
+#include_directories("${CMAKE_CURRENT_SOURCE_DIR}/../3rdparty")
+
+add_executable(${target} ${srcs} ${hdrs})
+target_link_libraries(${target} gtest)
